@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply m-0 min-w-[320px] min-h-screen;
+    /* Deep sea layered background */
+    background-color: #000814; /* deepest base */
+    background-image:
+      radial-gradient(1200px 600px at 80% -10%, rgba(0, 92, 175, 0.12), transparent 60%),
+      radial-gradient(1200px 600px at 10% -10%, rgba(0, 119, 182, 0.10), transparent 60%),
+      radial-gradient(1200px 700px at 50% 120%, rgba(0, 27, 58, 0.65), transparent 60%),
+      linear-gradient(180deg, #001d3d 0%, #000f24 60%, #000814 100%);
+    color: #e5f4ff;
+  }
+
+  #root {
+    @apply w-full mx-auto;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  /* Deep sea header/footer surfaces */
+  .deepsea-surface {
+    background: linear-gradient(180deg, rgba(0, 23, 45, 0.75), rgba(0, 12, 25, 0.75));
+    border-color: rgba(8, 47, 73, 0.5);
+    backdrop-filter: saturate(120%) blur(8px);
+  }
+
+  .deepsea-overlay {
+    background: linear-gradient(180deg, rgba(0, 12, 25, 0.55), rgba(0, 36, 66, 0.35));
+  }
+
+  /* Gradient text utilities */
+  .gradient-text-primary {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400;
+  }
+
+  .gradient-text-secondary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500;
+  }
+
+  .gradient-text-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-500 to-primary-500;
+  }
+
+  /* Custom scrollbar for aqua theme */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #001420;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #006080;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #0891b2;
+  }
+}
